@@ -1,0 +1,2 @@
+ALTER TABLE customer_reviews ADD COLUMN city TEXT NOT NULL DEFAULT '';
+ALTER TABLE customer_reviews ADD COLUMN photos TEXT NOT NULL DEFAULT '[]';
