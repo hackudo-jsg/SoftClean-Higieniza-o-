@@ -10,7 +10,7 @@ export const Route = createFileRoute("/higienizacao-em-nova-lacerda")({
       { property: "og:description", content: "Procura higienização de estofados em Nova Lacerda, MT? Consulte a SoftClean para limpeza de sofás, poltronas, cadeiras, colchões e interiores automotivos. Atendimento sujeito à disponibilidade." },
       { property: "og:locale", content: "pt_BR" },
     ],
-    links: [{ rel: "canonical", href: "https://softclean-higienizacao.higgsfield.app/higienizacao-em-nova-lacerda" }],
+    links: [{ rel: "canonical", href: "https://softclean-higienizacao.vercel.app/higienizacao-em-nova-lacerda" }],
   }),
   component: () => <CityPage city="Nova Lacerda" headline="Higienização de estofados em Nova Lacerda" intro="A SoftClean recebe pedidos de orçamento para limpeza de sofás, poltronas, cadeiras estofadas e colchões, além da higienização interna de veículos em Nova Lacerda, Mato Grosso. Envie fotos e informe o tipo de superfície pelo WhatsApp para iniciar a avaliação. A disponibilidade de atendimento é confirmada conforme agenda." />,
 });
