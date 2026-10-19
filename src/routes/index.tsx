@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
       { name: "keywords", content: "higienização de estofados, limpeza de sofá, limpeza de estofados, higienização automotiva, Pontes e Lacerda, Nova Lacerda, Conquista d'Oeste, Mato Grosso" },
       { property: "og:locale", content: "pt_BR" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
-      { name: "google-site-verification", content: "kvJQBe_WCpHrso6xPEu0m6ZBydeRmWyVNCPNNFuT8z0" },
+      { name: "google-site-verification", content: "ED9BjCOqn6MyKEBL6XuVnMiiBLWUxvTcX5uBiOGf86A" },
     ],
     links: [{ rel: "canonical", href: "https://softclean-higienizacao.vercel.app/" }],
   }),
