@@ -109,21 +109,23 @@ function HomePage() {
 
       <section className="sc-gallery sc-section" id="trabalhos" data-reveal>
         <div className="sc-gallery-heading">
-          <div><p className="sc-eyebrow sc-eyebrow-dark">RESULTADOS & CUIDADO</p><h2>Nosso trabalho,<br/><em>em detalhes.</em></h2></div>
-          <p>Veja fotos reais compartilhadas por clientes nas avaliações da SoftClean. Cada serviço é avaliado conforme o tecido, o material e as condições da peça.</p>
+          <div><p className="sc-eyebrow sc-eyebrow-dark">TRABALHOS REAIS</p><h2>Resultados do nosso<br/><em>trabalho.</em></h2></div>
+          <p>Confira registros reais de higienização realizados pela SoftClean em estofados e interiores automotivos.</p>
         </div>
-        {reviews.flatMap((review) => (review.photos || []).map((photo, index) => ({ photo, name: review.name, city: review.city, id: `${review.id}-${index}` }))).length ? (
-          <div className="sc-gallery-grid">
-            {reviews.flatMap((review) => (review.photos || []).map((photo, index) => ({ photo, name: review.name, city: review.city, id: `${review.id}-${index}` }))).slice(0, 12).map((item) => (
-              <a className="sc-gallery-item" href={item.photo} target="_blank" rel="noreferrer" key={item.id}>
-                <img src={item.photo} alt={`Foto real compartilhada por cliente SoftClean ${item.city ? `em ${item.city}` : ""}`} loading="lazy" />
-                <span><strong>Trabalho compartilhado por cliente</strong><small>{item.city || "SoftClean Higienização"}</small></span>
-              </a>
-            ))}
-          </div>
-        ) : (
-          <div className="sc-gallery-empty"><span aria-hidden="true">✦</span><h3>Os trabalhos reais vêm primeiro.</h3><p>Esta galeria exibirá fotos reais enviadas por clientes. Enquanto não houver fotos públicas disponíveis, preferimos não usar imagens genéricas como se fossem serviços da SoftClean.</p><a className="sc-button sc-button-green" href={WA} target="_blank" rel="noreferrer">Enviar fotos pelo WhatsApp <span>↗</span></a></div>
-        )}
+        <div className="sc-gallery-grid">
+          <a className="sc-gallery-item" href="/assets/softclean/trabalho-automotivo.jpg" target="_blank" rel="noreferrer">
+            <img src="/assets/softclean/trabalho-automotivo.jpg" alt="Antes e depois da higienização de bancos automotivos realizada pela SoftClean" loading="lazy" />
+            <span><strong>Higienização automotiva</strong><small>Antes e depois</small></span>
+          </a>
+          <a className="sc-gallery-item" href="/assets/softclean/trabalho-sofa-1.jpg" target="_blank" rel="noreferrer">
+            <img src="/assets/softclean/trabalho-sofa-1.jpg" alt="Antes e depois da limpeza de sofá realizada pela SoftClean" loading="lazy" />
+            <span><strong>Limpeza de sofá</strong><small>Antes e depois</small></span>
+          </a>
+          <a className="sc-gallery-item" href="/assets/softclean/trabalho-sofa-2.jpg" target="_blank" rel="noreferrer">
+            <img src="/assets/softclean/trabalho-sofa-2.jpg" alt="Antes e depois da higienização de poltrona realizada pela SoftClean" loading="lazy" />
+            <span><strong>Higienização de estofados</strong><small>Antes e depois</small></span>
+          </a>
+        </div>
       </section>
 
       <section className="sc-reviews sc-section" id="avaliacoes" data-reveal>
