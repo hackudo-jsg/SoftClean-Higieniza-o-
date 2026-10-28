@@ -107,6 +107,25 @@ function HomePage() {
 
       <section className="sc-home-service sc-section" data-reveal><p className="sc-eyebrow sc-eyebrow-dark">CUIDADO ONDE VOCÊ ESTÁ</p><h2>Seu estofado renovado,<br/><em>no conforto da sua casa.</em></h2><p>Atendimento residencial e comercial, com cuidado profissional para sofás, estofados e interiores automotivos. Chame a SoftClean e solicite seu orçamento.</p><a className="sc-button sc-button-green" href={WA} target="_blank" rel="noreferrer">Agendar atendimento <span>↗</span></a></section>
 
+      <section className="sc-gallery sc-section" id="trabalhos" data-reveal>
+        <div className="sc-gallery-heading">
+          <div><p className="sc-eyebrow sc-eyebrow-dark">RESULTADOS & CUIDADO</p><h2>Nosso trabalho,<br/><em>em detalhes.</em></h2></div>
+          <p>Veja fotos reais compartilhadas por clientes nas avaliações da SoftClean. Cada serviço é avaliado conforme o tecido, o material e as condições da peça.</p>
+        </div>
+        {reviews.flatMap((review) => (review.photos || []).map((photo, index) => ({ photo, name: review.name, city: review.city, id: `${review.id}-${index}` }))).length ? (
+          <div className="sc-gallery-grid">
+            {reviews.flatMap((review) => (review.photos || []).map((photo, index) => ({ photo, name: review.name, city: review.city, id: `${review.id}-${index}` }))).slice(0, 12).map((item) => (
+              <a className="sc-gallery-item" href={item.photo} target="_blank" rel="noreferrer" key={item.id}>
+                <img src={item.photo} alt={`Foto real compartilhada por cliente SoftClean ${item.city ? `em ${item.city}` : ""}`} loading="lazy" />
+                <span><strong>Trabalho compartilhado por cliente</strong><small>{item.city || "SoftClean Higienização"}</small></span>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div className="sc-gallery-empty"><span aria-hidden="true">✦</span><h3>Os trabalhos reais vêm primeiro.</h3><p>Esta galeria exibirá fotos reais enviadas por clientes. Enquanto não houver fotos públicas disponíveis, preferimos não usar imagens genéricas como se fossem serviços da SoftClean.</p><a className="sc-button sc-button-green" href={WA} target="_blank" rel="noreferrer">Enviar fotos pelo WhatsApp <span>↗</span></a></div>
+        )}
+      </section>
+
       <section className="sc-reviews sc-section" id="avaliacoes" data-reveal>
         <div className="sc-reviews-heading"><div><p className="sc-eyebrow sc-eyebrow-dark">A EXPERIÊNCIA DE QUEM CONTRATA</p><h2>Uma boa limpeza<br/><em>se sente nos detalhes.</em></h2></div><div className="sc-rating-summary"><strong>{reviews.length ? (reviews.reduce((sum, r) => sum + r.stars, 0) / reviews.length).toFixed(1).replace(".", ",") : "—"}</strong><span className={reviews.length ? "sc-stars" : "sc-stars sc-stars-empty"} aria-label={reviews.length ? "Avaliações de clientes" : "Ainda sem avaliações"}>{reviews.length ? "★★★★★" : "☆☆☆☆☆"}</span><small>{reviews.length ? `${reviews.length} avaliação(ões) de clientes` : "Seja a primeira pessoa a avaliar"}</small></div></div>
         {reviews.length ? <div className="sc-review-grid">{reviews.slice(0, 6).map((review) => <article className="sc-review-card" key={review.id}><div className="sc-stars" aria-label={`${review.stars} de 5 estrelas`}>{"★".repeat(review.stars)}{"☆".repeat(5-review.stars)}</div><p>{review.comment || "Atendimento avaliado pelo cliente."}</p><div className="sc-review-author"><span className="sc-review-avatar">{review.name.trim().charAt(0).toUpperCase()}</span><div><strong>{review.name}</strong><small>{review.city || "Cliente SoftClean"}</small></div></div>{review.photos?.length ? <div className="sc-review-photos">{review.photos.map((photo, index) => <a href={photo} target="_blank" rel="noreferrer" key={index} aria-label={`Abrir foto ${index + 1} enviada por ${review.name}`}><img src={photo} alt={`Foto de serviço enviada por ${review.name}`} loading="lazy" width="120" height="90"/></a>)}</div> : null}</article>)}</div> : <div className="sc-review-empty"><span className="sc-stars">★★★★★</span><h3>Sua opinião pode ser a primeira.</h3><p>Estamos abrindo este espaço para avaliações reais de quem já contratou a SoftClean. Conte como foi sua experiência.</p></div>}
