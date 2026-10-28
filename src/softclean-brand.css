@@ -1,0 +1,27 @@
+/* SoftClean brand refresh: black + vivid green, preserving layout and content. */
+:root{--sc-green:#39e75f;--sc-green-dark:#07150b;--sc-paper:#070b08;--sc-pale:#101812;--sc-ink:#f4f7f4;--sc-muted:#a5b2a7;--sc-line:#26382b}
+html,body{background:#070b08!important;color:#f4f7f4!important;color-scheme:dark!important}
+.sc-site{background:#070b08!important;color:#f4f7f4!important}
+.sc-nav{background:rgba(7,11,8,.94)!important;border-bottom:1px solid rgba(57,231,95,.22)!important;backdrop-filter:blur(16px)}
+.sc-links>a:not(.sc-nav-cta),.sc-brand{color:#f4f7f4!important}
+.sc-nav-cta,.sc-button-green{background:#39e75f!important;color:#07150b!important;border-color:#39e75f!important}
+.sc-progress span{background:#39e75f!important}
+.sc-hero{background:#070b08!important}
+.sc-hero-image{filter:brightness(.45) saturate(.8)}
+.sc-hero-wash{background:linear-gradient(90deg,rgba(4,9,5,.97) 0%,rgba(4,9,5,.82) 45%,rgba(4,9,5,.2) 100%)!important}
+.sc-eyebrow,.sc-hero-tagline,.sc-inline-link,.sc-text-link{color:#39e75f!important}
+.sc-hero h1,.sc-hero-copy,.sc-hero-bottom,.sc-scroll-cue{color:#f4f7f4!important}
+.sc-hero h1 em,.sc-intro h2 em,.sc-section-heading h2 em,.sc-home-service h2 em,.sc-reviews-heading h2 em{color:#39e75f!important}
+.sc-intro,.sc-services,.sc-home-service,.sc-reviews{background:#070b08!important;color:#f4f7f4!important}
+.sc-intro-copy p,.sc-section-heading>p,.sc-service-info p,.sc-home-service>p,.sc-review-form-wrap p,.sc-review-empty p{color:#b4c0b6!important}
+.sc-service-card,.sc-review-card,.sc-review-empty,.sc-review-form-wrap{background:#0d140f!important;border-color:#26382b!important;color:#f4f7f4!important}
+.sc-service-info h3,.sc-reviews h3,.sc-review-author strong{color:#f4f7f4!important}
+.sc-service-art{background:#111a13!important}
+.sc-service-info a{color:#39e75f!important}
+.sc-number,.sc-service-info>span,.sc-review-author small{color:#9cac9f!important}
+.sc-home-service{border-top:1px solid #26382b!important;border-bottom:1px solid #26382b!important}
+.sc-button:not(.sc-button-green){color:#f4f7f4!important}
+.sc-site input,.sc-site textarea,.sc-site select{background:#080e09!important;color:#f4f7f4!important;border-color:#344b38!important}
+.sc-site input::placeholder,.sc-site textarea::placeholder{color:#8c9b8e!important}
+.sc-site footer{background:#050805!important;color:#eaf2eb!important}
+@media(max-width:700px){.sc-hero-wash{background:linear-gradient(180deg,rgba(4,9,5,.82),rgba(4,9,5,.9))!important}}
