@@ -1,3 +1,9 @@
 {
-  "framework": "tanstack-start"
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://softclean-higienizacao.netlify.app/$1",
+      "permanent": true
+    }
+  ]
 }
